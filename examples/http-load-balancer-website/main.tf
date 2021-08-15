@@ -47,8 +47,8 @@ module "static_site" {
   create_dns_entry      = var.create_dns_entry
   dns_record_ttl        = var.dns_record_ttl
   dns_managed_zone_name = var.dns_managed_zone_name
-
-  enable_versioning = var.enable_versioning
+  custom_headers        = var.custom_headers
+  enable_versioning     = var.enable_versioning
 
   index_page     = var.index_page
   not_found_page = var.not_found_page
