@@ -8,10 +8,22 @@
 
 This repo contains modules for managing static assets (CSS, JS, images) in GCP.
 
-:white_check_mark: ## Updates
+## Updates :white_check_mark:
 
 This project was forked from the great work that Gruntwork has done and has been extended to include new functionality. 
 
+- Custom Header Support Added for Buckets
+
+```text
+
+# Accepts a list of headers
+variable "custom_headers" {
+  description = "A list of custom Headers that the HTTP/S load balancer should add to proxied responses"
+  type        = list(string)
+  default     = ["Referrer-Policy: origin"]
+}
+
+```
 
 ## Quickstart
 
