@@ -3,12 +3,16 @@
 Contributions to this Module are very welcome! We follow a fairly standard [pull request process](
 https://help.github.com/articles/about-pull-requests/) for contributions, subject to the following guidelines:
  
-1. [File a GitHub issue](#file-a-github-issue)
-1. [Update the documentation](#update-the-documentation)
-1. [Update the tests](#update-the-tests)
-1. [Update the code](#update-the-code)
-1. [Create a pull request](#create-a-pull-request)
-1. [Merge and release](#merge-and-release)
+- [Contribution Guidelines](#contribution-guidelines)
+  - [File a GitHub issue](#file-a-github-issue)
+  - [Update the documentation](#update-the-documentation)
+  - [Update the tests](#update-the-tests)
+  - [Update the code](#update-the-code)
+    - [Backwards compatibility](#backwards-compatibility)
+    - [Downtime](#downtime)
+    - [Formatting and pre-commit hooks](#formatting-and-pre-commit-hooks)
+  - [Create a pull request](#create-a-pull-request)
+  - [Merge and release](#merge-and-release)
 
 ## File a GitHub issue
 
@@ -29,7 +33,7 @@ We also recommend updating the automated tests *before* updating any code (see [
 Development](https://en.wikipedia.org/wiki/Test-driven_development)). That means you add or update a test case, 
 verify that it's failing with a clear error message, and *then* make the code changes to get that test to pass. This 
 ensures the tests stay up to date and verify all the functionality in this Module, including whatever new 
-functionality you're adding in your contribution. Check out the [tests](https://github.com/gruntwork-io/terraform-google-static-assets/tree/master/test) folder for instructions on running the 
+functionality you're adding in your contribution. Check out the [tests](https://github.com/simplycubed/terraform-google-static-assets/tree/master/test) folder for instructions on running the 
 automated tests. 
 
 ## Update the code
@@ -96,4 +100,4 @@ to include the following:
 ## Merge and release   
 
 The maintainers for this repo will review your code and provide feedback. If everything looks good, they will merge the
-code and release a new version, which you'll be able to find in the [releases page](https://github.com/gruntwork-io/terraform-google-static-assets/releases).
+code and release a new version, which you'll be able to find in the [releases page](https://github.com/simplycubed/terraform-google-static-assets/releases).
