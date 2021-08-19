@@ -55,16 +55,16 @@ This repo has the following folder structure:
 
 ## Who maintains this Module?
 
-This Module and its Submodules are maintained by [Gruntwork](http://www.gruntwork.io/). Read the [Gruntwork Philosophy](/GRUNTWORK_PHILOSOPHY.md) document to learn more about how Gruntwork builds production grade infrastructure code. If you are looking for help or commercial support, send an email to
-[support@gruntwork.io](mailto:support@gruntwork.io?Subject=Google%20Static%20Assets%20Module).
+This Module and its Submodules are maintained by [SimplyCubed](http://www.simplycubed.com/). If you are looking for help or commercial support, send an email to
+[support@simplycubed.com](mailto:support@simplycubed.com?Subject=Google%20Static%20Assets%20Module).
 
-Gruntwork can help with:
+SimplyCubed can help with:
 
 - Setup, customization, and support for this Module.
 - Modules and submodules for other types of infrastructure, such as VPCs, Docker clusters, databases, and continuous
   integration.
-- Modules and Submodules that meet compliance requirements, such as HIPAA.
-- Consulting & Training on GCP, AWS, Terraform, and DevOps.
+- Modules and Submodules that meet compliance requirements.
+- Consulting & Training on GCP, Terraform, and DevOps.
 
 ## How do I contribute to this Module?
 
