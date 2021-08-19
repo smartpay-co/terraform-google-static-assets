@@ -8,7 +8,7 @@
 
 This repo contains modules for managing static assets (CSS, JS, images) in GCP.
 
-## Updates :white_check_mark:
+## Updates
 
 This project was forked from the great work that Gruntwork has done and has been extended to include new functionality. 
 
