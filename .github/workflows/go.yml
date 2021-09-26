@@ -25,6 +25,10 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.17
-
+    
     - name: Test
-      run: go test -v test/
+      run: |
+       cd test
+       go test 
+      env:
+        TERRA_ROOT_DOMAIN: ${{ secrets.ROOT_DOMAIN }}
