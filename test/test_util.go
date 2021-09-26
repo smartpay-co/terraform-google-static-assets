@@ -31,7 +31,7 @@ const OUTPUT_LB_IP_ADDRESS = "load_balancer_ip_address"
 const EXAMPLE_NAME_LB_SITE = "http-load-balancer-website"
 const EXAMPLE_NAME_STATIC_SITE = "cloud-storage-static-website"
 
-const TEST_WEBSITE_MAX_RETRIES = 10
+const TEST_WEBSITE_MAX_RETRIES = 30
 const TEST_WEBSITE_SLEEP_TIME = 30 * time.Second
 
 func testWebsite(t *testing.T, protocol string, url string, path string, expectedStatus int, expectedBody string) {
