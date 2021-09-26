@@ -30,3 +30,5 @@ jobs:
       run: |
        cd test
        go test 
+      env:
+        TERRA_ROOT_DOMAIN: ${{ secrets.ROOT_DOMAIN }}
