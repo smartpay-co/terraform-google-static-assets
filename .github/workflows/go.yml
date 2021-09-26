@@ -28,7 +28,5 @@ jobs:
     
     - name: Test
       run: |
-       ls 
-       pwd
-       ls ../
-       go test -v test/
+       cd test
+       go test 
