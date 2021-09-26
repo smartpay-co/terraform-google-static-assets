@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
-
+    "os"
 	"github.com/gruntwork-io/terratest/modules/gcp"
 	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/random"
@@ -58,8 +58,8 @@ func TestLoadbalancerWebsites(t *testing.T) {
 				// Bucket names must be lowercase and start with a letter
 				randomId := strings.ToLower(random.UniqueId())
 				randomId = fmt.Sprintf("a%s", randomId)
-
-				domainName := fmt.Sprintf("%s.%s", randomId, ROOT_DOMAIN_NAME_FOR_TEST)
+                rootDomainName := os.Getenv("TERRA_ROOT_DOMAIN")
+				domainName := fmt.Sprintf("%s.%s", randomId, rootDomainName)
 
 				projectId := gcp.GetGoogleProjectIDFromEnvVar(t)
 

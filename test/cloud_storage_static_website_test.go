@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 	"testing"
-
+	"os"
 	"github.com/gruntwork-io/terratest/modules/gcp"
 	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/random"
@@ -28,7 +28,8 @@ func TestCloudStorageStaticSite(t *testing.T) {
 		logger.Logf(t, "Bootstrapping variables")
 
 		randomId := strings.ToLower(random.UniqueId())
-		domainName := fmt.Sprintf("%s.%s", randomId, ROOT_DOMAIN_NAME_FOR_TEST)
+		rootDomainName := os.Getenv("TERRA_ROOT_DOMAIN")
+		domainName := fmt.Sprintf("%s.%s", randomId, rootDomainName)
 		projectId := gcp.GetGoogleProjectIDFromEnvVar(t)
 		test_structure.SaveString(t, exampleDir, KEY_DOMAIN_NAME, domainName)
 		test_structure.SaveString(t, exampleDir, KEY_PROJECT, projectId)

@@ -20,8 +20,8 @@ import (
 //const ROOT_DOMAIN_NAME_FOR_TEST = "gcloud-dev.com"
 //const MANAGED_ZONE_NAME_FOR_TEST = "gclouddev"
 
-const ROOT_DOMAIN_NAME_FOR_TEST = "gcloud-test.com"
-const MANAGED_ZONE_NAME_FOR_TEST = "gcloudtest"
+// const ROOT_DOMAIN_NAME_FOR_TEST = "simplycubed.net"
+const MANAGED_ZONE_NAME_FOR_TEST = "terra-test"
 
 const KEY_PROJECT = "project"
 const KEY_DOMAIN_NAME = "domain-name"
@@ -31,7 +31,7 @@ const OUTPUT_LB_IP_ADDRESS = "load_balancer_ip_address"
 const EXAMPLE_NAME_LB_SITE = "http-load-balancer-website"
 const EXAMPLE_NAME_STATIC_SITE = "cloud-storage-static-website"
 
-const TEST_WEBSITE_MAX_RETRIES = 30
+const TEST_WEBSITE_MAX_RETRIES = 10
 const TEST_WEBSITE_SLEEP_TIME = 30 * time.Second
 
 func testWebsite(t *testing.T, protocol string, url string, path string, expectedStatus int, expectedBody string) {
