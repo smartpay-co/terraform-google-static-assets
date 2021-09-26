@@ -14,7 +14,7 @@ import (
 )
 
 func TestCloudStorageStaticSite(t *testing.T) {
-	t.Parallel()
+	// t.Parallel()
 
 	//os.Setenv("SKIP_bootstrap", "true")
 	//os.Setenv("SKIP_deploy", "true")

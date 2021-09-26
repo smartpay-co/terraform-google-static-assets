@@ -15,7 +15,7 @@ import (
 )
 
 func TestLoadbalancerWebsites(t *testing.T) {
-	t.Parallel()
+	// t.Parallel()
 
 	var testcases = []struct {
 		testName     string
