@@ -1,6 +1,6 @@
 [![Maintained by SimplyCubed.com](https://img.shields.io/badge/maintained%20by-simplycubed.com-%235849a6.svg)](https://simplycubed.com/?ref=repo_google_static_assets)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/simplycubed/terraform-google-static-assets.svg?label=latest)](https://github.com/simplycubed/terraform-google-static-assets/releases/latest)
-![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+![Terraform Version](https://img.shields.io/badge/tf-%3E%3D1.0.x-blue.svg)
 
 <!-- NOTE: Because the module is published to Terraform Module Registry, we have to use absolute links in all READMEs. -->
 
@@ -10,19 +10,17 @@ This repo contains modules for managing static assets (CSS, JS, images) in GCP.
 
 ## Updates
 
-This project was forked from the great work that Gruntwork has done and has been extended to include new functionality. 
+This project was forked from the great work that Gruntwork has done and has been extended to include new functionality.
 
 - Custom Header Support Added for Buckets
 
 ```text
-
 # Accepts a list of headers
 variable "custom_headers" {
   description = "A list of custom Headers that the HTTP/S load balancer should add to proxied responses"
   type        = list(string)
   default     = ["Referrer-Policy: origin"]
 }
-
 ```
 
 ## Quickstart
