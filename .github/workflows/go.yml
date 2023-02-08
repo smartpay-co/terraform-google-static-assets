@@ -31,5 +31,5 @@ jobs:
        cd test
        go test 
       env:
-        TERRA_ROOT_DOMAIN: site.simplycubed.tools
+        TERRA_ROOT_DOMAIN: simplycubed.tools
         TERRA_ZONE_NAME: simplycubed-tool
