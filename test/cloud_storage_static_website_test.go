@@ -29,10 +29,12 @@ func TestCloudStorageStaticSite(t *testing.T) {
 
 		randomId := strings.ToLower(random.UniqueId())
 		rootDomainName := environment.GetFirstNonEmptyEnvVarOrFatal(t, []string{"TERRA_ROOT_DOMAIN"})
+		zoneName := environment.GetFirstNonEmptyEnvVarOrFatal(t, []string{"TERRA_ZONE_NAME"})
 		domainName := fmt.Sprintf("%s.%s", randomId, rootDomainName)
 		projectId := gcp.GetGoogleProjectIDFromEnvVar(t)
 		test_structure.SaveString(t, exampleDir, KEY_DOMAIN_NAME, domainName)
 		test_structure.SaveString(t, exampleDir, KEY_PROJECT, projectId)
+		test_structure.SaveString(t, exampleDir, KEY_ZONE_NAME, zoneName)
 	})
 
 	// At the end of the test, run `terraform destroy` to clean up any resources that were created
@@ -48,7 +50,8 @@ func TestCloudStorageStaticSite(t *testing.T) {
 
 		projectId := test_structure.LoadString(t, exampleDir, KEY_PROJECT)
 		domainName := test_structure.LoadString(t, exampleDir, KEY_DOMAIN_NAME)
-		terraformOptions := createTerratestOptionsForStaticSite(exampleDir, projectId, domainName, MANAGED_ZONE_NAME_FOR_TEST)
+		zoneName := test_structure.LoadString(t, exampleDir, KEY_ZONE_NAME)
+		terraformOptions := createTerratestOptionsForStaticSite(exampleDir, projectId, domainName, zoneName)
 		test_structure.SaveTerraformOptions(t, exampleDir, terraformOptions)
 
 		terraform.InitAndApply(t, terraformOptions)

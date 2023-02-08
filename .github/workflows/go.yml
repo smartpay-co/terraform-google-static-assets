@@ -32,3 +32,4 @@ jobs:
        go test 
       env:
         TERRA_ROOT_DOMAIN: ${{ secrets.ROOT_DOMAIN }}
+        TERRA_ZONE_NAME: simplycubed-tool

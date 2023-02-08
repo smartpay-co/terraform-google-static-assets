@@ -21,7 +21,7 @@ import (
 //const MANAGED_ZONE_NAME_FOR_TEST = "gclouddev"
 
 // const ROOT_DOMAIN_NAME_FOR_TEST = "simplycubed.net"
-const MANAGED_ZONE_NAME_FOR_TEST = "terra-test"
+// const MANAGED_ZONE_NAME_FOR_TEST = "terra-test"
 
 const KEY_PROJECT = "project"
 const KEY_DOMAIN_NAME = "domain-name"
