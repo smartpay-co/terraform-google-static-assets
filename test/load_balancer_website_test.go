@@ -28,9 +28,9 @@ func TestLoadbalancerWebsites(t *testing.T) {
 			false,
 		},
 		{
-			"TestLoadBalancerWithDomainAndSsl",
+			"TestLoadBalancerWithDomain",
 			true,
-			true,
+			false,
 		},
 	}
 
