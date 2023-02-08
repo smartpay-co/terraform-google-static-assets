@@ -13,7 +13,7 @@ terraform {
   required_providers {
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = "~> 3.50.0"
+      version = "~> 4.50.0"
     }
   }
 }
@@ -101,7 +101,6 @@ resource "google_storage_object_acl" "not_found_acl" {
 resource "tls_self_signed_cert" "cert" {
   count = var.enable_ssl ? 1 : 0
 
-  key_algorithm   = "RSA"
   private_key_pem = join("", tls_private_key.private_key.*.private_key_pem)
 
   subject {
