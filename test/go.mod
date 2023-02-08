@@ -3,7 +3,7 @@ module github.com/simplycubed/terraform-google-static-assets/test
 go 1.18
 
 require (
-	github.com/gruntwork-io/terratest v0.41.10
+	github.com/gruntwork-io/terratest v0.40.17
 	github.com/stretchr/testify v1.7.2
 )
 
