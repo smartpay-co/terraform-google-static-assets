@@ -56,7 +56,7 @@ func TestLoadbalancerWebsites(t *testing.T) {
 				
 
 				rootDomainName := environment.GetFirstNonEmptyEnvVarOrFatal(t, []string{"TERRA_ROOT_DOMAIN"})
-				
+				zoneName := environment.GetFirstNonEmptyEnvVarOrFatal(t, []string{"TERRA_ZONE_NAME"})
 				logger.Logf(t, "Bootstrapping variables")
 
 				// Bucket names must be lowercase and start with a letter
@@ -70,6 +70,7 @@ func TestLoadbalancerWebsites(t *testing.T) {
 
 				test_structure.SaveString(t, exampleDir, KEY_DOMAIN_NAME, domainName)
 				test_structure.SaveString(t, exampleDir, KEY_PROJECT, projectId)
+				test_structure.SaveString(t, exampleDir, KEY_ZONE_NAME, zoneName)
 			})
 
 			// At the end of the test, run `terraform destroy` to clean up any resources that were created
@@ -85,8 +86,9 @@ func TestLoadbalancerWebsites(t *testing.T) {
 
 				projectId := test_structure.LoadString(t, exampleDir, KEY_PROJECT)
 				domainName := test_structure.LoadString(t, exampleDir, KEY_DOMAIN_NAME)
+                zoneName := test_structure.LoadString(t, exampleDir, KEY_ZONE_NAME)
 
-				terraformOptions := createTerratestOptionsForLoadBalancer(exampleDir, projectId, domainName, testCase.createDomain, testCase.enableSsl)
+				terraformOptions := createTerratestOptionsForLoadBalancer(exampleDir, projectId, domainName,zoneName, testCase.createDomain, testCase.enableSsl)
 
 				test_structure.SaveTerraformOptions(t, exampleDir, terraformOptions)
 
@@ -123,7 +125,7 @@ func TestLoadbalancerWebsites(t *testing.T) {
 
 }
 
-func createTerratestOptionsForLoadBalancer(exampleDir string, projectId string, domainName string, createDnsEntry bool, enableSsl bool) *terraform.Options {
+func createTerratestOptionsForLoadBalancer(exampleDir string, projectId string, domainName string, zoneName string, createDnsEntry bool, enableSsl bool) *terraform.Options {
 
 	terratestOptions := &terraform.Options{
 		// The path to where your Terraform code is located
@@ -134,7 +136,7 @@ func createTerratestOptionsForLoadBalancer(exampleDir string, projectId string, 
 			"create_dns_entry":                 createDnsEntry,
 			"enable_ssl":                       enableSsl,
 			"enable_http":                      true,
-			"dns_managed_zone_name":            MANAGED_ZONE_NAME_FOR_TEST,
+			"dns_managed_zone_name":            zoneName,
 			"force_destroy_website":            "true",
 			"force_destroy_access_logs_bucket": "true",
 		},
