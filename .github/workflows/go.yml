@@ -12,14 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up gcloud Cloud SDK environment
-      # You may pin to the exact commit or the version.
-      # uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
-      uses: google-github-actions/setup-gcloud@v0.3.0
+    - name: 'gcloud-auth'
+      uses: 'google-github-actions/auth@v1'
       with:
-        service_account_key: ${{ secrets.GCLOUD_SA_KEY }}
-        project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
-        export_default_credentials: true
+        credentials_json: '${{ secrets.GCLOUD_SA_KEY }}'
+    - name: Set up gcloud Cloud SDK environment
+      uses: google-github-actions/setup-gcloud@v0.3.0
+
             
     - name: Set up Go
       uses: actions/setup-go@v3
